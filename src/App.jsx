@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 
@@ -11,18 +10,7 @@ import Show from './Pages/Show'
 
 import NavBar from './Components/NavBar'
 
-const API = import.meta.env.VITE_API_URL
-
 function App() {
-
-  useEffect(() => {
-    fetch(`${API}/workouts`)
-      .then((res) => {
-      return res.json()
-      })
-    .then(resJSON => console.log(resJSON))
-
-  }, [])
 
   return (
     <div>
