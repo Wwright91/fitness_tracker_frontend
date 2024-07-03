@@ -1,8 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const Workout = () => {
+const Workout = ({workout}) => {
   return (
-    <div>Workout</div>
+    <div>
+      <Link to={`/workouts/${workout.id}`}>{workout.type}</Link>
+    </div>
   )
 }
 
