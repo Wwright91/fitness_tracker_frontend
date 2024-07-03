@@ -24,6 +24,16 @@ const WorkoutDetails = () => {
 
   }, [id, navigate])
 
+  const handleDelete = () => {
+    fetch(`${API}/workouts/${id}`, {
+      method: "DELETE"
+    })
+      .then(() => {
+      navigate("/workouts")
+      })
+    .catch((error) => console.error(error))
+  }
+
   return (
     <div>
       <h1>WorkoutDetails</h1>
@@ -32,7 +42,7 @@ const WorkoutDetails = () => {
       <Link to={`/workouts/${id}/edit`}>
       <button>Edit</button>
       </Link>
-      <button>Delete</button>
+      <button onClick={handleDelete}>Delete</button>
     </div>
   )
 }
